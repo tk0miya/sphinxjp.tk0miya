@@ -1,0 +1,11 @@
+syntax: glob
+
+*.pyc
+*.swp
+*~
+bin
+build/
+*egg*
+dist
+eggs
+parts
