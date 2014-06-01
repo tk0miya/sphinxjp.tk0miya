@@ -26,12 +26,13 @@ option in `conf.py`.
    # Enabled extensions
    extensions = ['sphinxjp.tk0miya']
 
-You should get access token from Flickr and set filckr_access_token in
+You should get access token from Flickr and set filckr_api_key and flickr_secret in
 your conf.py
 
 ::
 
-   flickr_access_token = "<YOUR ACCESS TOKEN PUT HERE>"
+   flickr_api_key="<YOUR_API_KEY_PUT_HERE>"
+   flickr_secret="<YOUR_SECRET_PUT_HERE>"
 
 
 usage

@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
+import os
 
-long_desc = '''
-Flickr photo API from Sphinx
-
-'''
+long_desc = open("README.rst").read()
 
 requires = ['Sphinx>=0.6', 'setuptools', 'flickr_api']
 
