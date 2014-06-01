@@ -34,6 +34,8 @@ usage
 
    .. flickr_search:: marriage
 
+random
+------------
 
 flickr_search put only a first image. You can set `:random:` as option
 to put a randomized image.
@@ -42,6 +44,51 @@ to put a randomized image.
 
    .. flickr_search:: marriage
       :random:
+
+license
+--------
+
+You can set search license by setting license option.
+
+::
+
+   .. flickr_search:: marriage
+      :license: 0,1
+
+possible values are
+
+- 0 All Rights Reserved
+- 1 `Attribution-NonCommercial-ShareAlike License <http://creativecommons.org/licenses/by-nc-sa/2.0/>`_
+- 2 `Attribution-NonCommercial License <http://creativecommons.org/licenses/by-nc/2.0/>`_
+- 3 `Attribution-NonCommercial-NoDerivs License <http://creativecommons.org/licenses/by-nc-nd/2.0/>`_
+- 4 `Attribution License <http://creativecommons.org/licenses/by/2.0/>`_
+- 5 `Attribution-ShareAlike License <http://creativecommons.org/licenses/by-sa/2.0/>`_
+- 6 `Attribution-NoDerivs License <http://creativecommons.org/licenses/by-nd/2.0/>`_
+- 7 `No known copyright restrictions <http://flickr.com/commons/usage/>`_
+- 8 `United States Government Work <http://www.usa.gov/copyright.shtml>`_
+
+If you want to search multiple licenses, use comma-separated.
+
+size
+--------
+
+::
+
+   .. flickr_search:: marriage
+      :size: Small
+
+Possible values are
+
+- "square"
+- "large Square"  # note: Square is Uppwer case but large is Lower
+- "thumbnail"
+- "small"
+- "small 320"
+- "medium"
+- "medium 640"
+- "medium 800"
+- "large"
+- "original"
 
 
 Config

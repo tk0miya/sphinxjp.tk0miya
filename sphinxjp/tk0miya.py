@@ -27,12 +27,23 @@ class searchnode(nodes.General, nodes.Element):
     pass
 
 
+def spec_size(argument):
+    possible = ('square', 'large square', 'thumbnail', 'small',
+                'small 320', 'medium', 'medium 640', 'medium 800',
+                'large', 'original')
+
+    return directives.choice(argument, possible)
+
+
 class SearchDirective(Directive):
+
     has_content = False
     required_arguments = 1
-    optional_arguments = 1
+    optional_arguments = 3
     option_spec = {
         'random': directives.flag,
+        'size': spec_size,
+        'license': directives.unchanged,
     }
 
     def run(self):
@@ -40,17 +51,27 @@ class SearchDirective(Directive):
         api_key = env.config.flickr_api_key
         secret = env.config.flickr_secret
 
+        if 'size' in self.options:
+            size = self.options['size']
+            size = size.capitalize()
+        else:
+            size = "Medium"
+
+        if 'license' in self.options:
+            license = self.options['license']
+        else:
+            license = "0"
+
         if api_key is None or secret is None:
             # TODO: how to use warning?
             env.warn(__name__, 'please set your api_key and secret in conf.py')
             return []
 
-        size = "Medium"  # TODO
-
         node = searchnode(api_key=api_key,
                           secret=secret,
                           searchtags=self.arguments[0],
                           random=('random' in self.options),
+                          license=license,
                           size=size)
         return [node]
 
@@ -71,7 +92,7 @@ def visit_search_node(self, node):
         else:
             p = photos[0]
 
-        url = p.getPhotoFile(size_label="Medium")
+        url = p.getPhotoFile(size_label=size)
         html = FLICKR_IMAGE_TEMPLATE.format(url)
         self.body.append(html)
 
