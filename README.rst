@@ -26,6 +26,13 @@ option in `conf.py`.
    # Enabled extensions
    extensions = ['sphinxjp.tk0miya']
 
+You should get access token from Flickr and set filckr_access_token in
+your conf.py
+
+::
+
+   flickr_access_token = "<YOUR ACCESS TOKEN PUT HERE>"
+
 
 usage
 =====================
@@ -89,17 +96,6 @@ Possible values are
 - "medium 800"
 - "large"
 - "original"
-
-
-Config
-=========================
-
-You should get access token from Flickr and set filckr_access_token in
-your conf.py
-
-::
-
-   flickr_access_token = "<YOUR ACCESS TOKEN PUT HERE>"
 
 
 Repository
