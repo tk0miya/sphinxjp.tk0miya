@@ -10,7 +10,7 @@ requires = ['Sphinx>=0.6', 'setuptools', 'flickr_api']
 setup(
     name='sphinxjp-tk0miya',
     version='0.0.2',
-    url='http://bitbucket.org/r_rudi/sphinxjp-tk0miya',
+    url='http://bitbucket.org/r_rudi/sphinxjp.tk0miya',
     download_url='http://pypi.python.org/pypi/sphinxjp-tk0miya',
     license='BSD',
     author='WAKAYAMA Shirou',
