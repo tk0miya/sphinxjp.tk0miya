@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
-import os
 
 long_desc = open("README.rst").read()
 

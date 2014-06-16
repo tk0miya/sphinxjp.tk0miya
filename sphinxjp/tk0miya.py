@@ -7,13 +7,12 @@
     :license: BSD, see LICENSE for details.
 """
 
-import sys
 import random
 
 
 import flickr_api
 
-from docutils import nodes, utils
+from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.compat import Directive
 
@@ -97,7 +96,7 @@ def visit_search_node(self, node):
         html = FLICKR_IMAGE_TEMPLATE.format(page_url, image_url)
         self.body.append(html)
 
-    except Exception, e:
+    except Exception:
         self.builder.warn('fail to load flickr. check api_key in your conf.py')
         raise nodes.SkipNode
 
