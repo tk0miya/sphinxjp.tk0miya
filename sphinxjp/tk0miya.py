@@ -19,7 +19,7 @@ from sphinx.util.compat import Directive
 
 
 FLICKR_IMAGE_TEMPLATE = '''
-<img src="{0}" />
+<a href="{0}"><img src="{1}" /></a>
 '''
 
 
@@ -92,8 +92,9 @@ def visit_search_node(self, node):
         else:
             p = photos[0]
 
-        url = p.getPhotoFile(size_label=size)
-        html = FLICKR_IMAGE_TEMPLATE.format(url)
+        page_url = p.getPageUrl()
+        image_url = p.getPhotoFile(size_label=size)
+        html = FLICKR_IMAGE_TEMPLATE.format(page_url, image_url)
         self.body.append(html)
 
     except Exception, e:
