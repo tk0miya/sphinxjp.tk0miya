@@ -40,17 +40,17 @@ usage
 
 ::
 
-   .. flickr_search:: marriage
+   .. flickr-search:: marriage
 
 random
 ------------
 
-flickr_search put only a first image. You can set `:random:` as option
+flickr-search put only a first image. You can set `:random:` as option
 to put a randomized image.
 
 ::
 
-   .. flickr_search:: marriage
+   .. flickr-search:: marriage
       :random:
 
 license
@@ -60,7 +60,7 @@ You can set search license by setting license option.
 
 ::
 
-   .. flickr_search:: marriage
+   .. flickr-search:: marriage
       :license: 0,1
 
 possible values are
@@ -82,7 +82,7 @@ size
 
 ::
 
-   .. flickr_search:: marriage
+   .. flickr-search:: marriage
       :size: Small
 
 Possible values are
