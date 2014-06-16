@@ -69,7 +69,7 @@ class SearchDirective(Directive):
 
         node = searchnode(api_key=api_key,
                           secret=secret,
-                          searchtags=self.arguments[0],
+                          searchtags=" ".join(self.arguments),
                           random=('random' in self.options),
                           license=license,
                           size=size)
